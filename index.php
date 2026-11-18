@@ -45,28 +45,8 @@ $segundos = $tiempoActivo % 60;
             </p>
         </section>
 
-        <section class="session-info">
-            <h2>Información de la sesión</h2>
-
-            <p>
-                <strong>Hora de inicio:</strong>
-                <?= htmlspecialchars($horaInicio) ?>
-            </p>
-
-            <p>
-                <strong>Hora actual:</strong>
-                <?= htmlspecialchars($horaActual) ?>
-            </p>
-
-            <p>
-                <strong>Tiempo activo:</strong>
-                <?= $minutos ?> minutos y <?= $segundos ?> segundos
-            </p>
-
-            <a href="index.php?reiniciar=1">
-                Reiniciar sesión
-            </a>
-        </section>
+       <?php require_once __DIR__ . '/includes/session-info.php'; ?>
+       
     </main>
 
     <?php require_once __DIR__ . '/includes/footer.php'; ?>
