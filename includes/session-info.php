@@ -1,9 +1,9 @@
-
 <?php
-$horaInicio = date('H:i:s', $_SESSION['inicio']);
-$horaActual = date('H:i:s');
 
-$tiempoActivo = time() - $_SESSION['inicio'];
+$horaInicio = $_SESSION['inicio'];
+$horaActual = time();
+
+$tiempoActivo = $horaActual - $horaInicio;
 
 $minutos = floor($tiempoActivo / 60);
 $segundos = $tiempoActivo % 60;
@@ -14,12 +14,12 @@ $segundos = $tiempoActivo % 60;
 
     <p>
         <strong>Hora de inicio:</strong>
-        <?= htmlspecialchars($horaInicio) ?>
+        <?= date('H:i:s', $horaInicio) ?>
     </p>
 
     <p>
         <strong>Hora actual:</strong>
-        <?= htmlspecialchars($horaActual) ?>
+        <?= date('H:i:s', $horaActual) ?>
     </p>
 
     <p>

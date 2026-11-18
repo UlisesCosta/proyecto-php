@@ -46,7 +46,9 @@ $segundos = $tiempoActivo % 60;
         </section>
 
        <?php require_once __DIR__ . '/includes/session-info.php'; ?>
-       
+        <a href="index.php?reiniciar=1" class="btn-reiniciar">
+             Reiniciar sesión
+        </a>
     </main>
 
     <?php require_once __DIR__ . '/includes/footer.php'; ?>
