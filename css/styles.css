@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,70 +7,173 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f6f9;
-    color: #263238;
+    background-color: #18181b;
+    color: #fafafa;
     line-height: 1.6;
 }
 
+/* Encabezado */
 .site-header {
-    background-color: #263b50;
-    color: white;
+    background-color: #202023;
+    color: #fafafa;
     text-align: center;
-    padding: 30px 20px;
+    padding: 35px 20px;
+    border-bottom: 1px solid #3f3f46;
 }
 
+.site-header h1 {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.8px;
+}
+
+.site-header p {
+    margin-top: 6px;
+    color: #c4c4cc;
+    font-size: 14px;
+}
+
+/* Menú */
 .main-menu {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
-    padding: 15px;
-    background-color: #344f68;
+    gap: 6px;
+    padding: 12px 20px;
+    background-color: #202023;
+    border-bottom: 1px solid #3f3f46;
 }
 
 .main-menu a {
-    color: white;
+    color: #d4d4d8;
     text-decoration: none;
     padding: 8px 14px;
-    border-radius: 5px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
 }
 
 .main-menu a:hover {
-    background-color: #4e7192;
+    background-color: #3f3f46;
+    color: #ffffff;
 }
 
+/* Contenido principal */
 .container {
     width: 90%;
     max-width: 1000px;
-    margin: 30px auto;
+    margin: 40px auto;
 }
 
+/* Tarjetas */
 .welcome,
 .session-info {
-    background-color: white;
-    padding: 25px;
+    background-color: #27272a;
+    padding: 28px;
     margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #3f3f46;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.welcome h2,
+.session-info h2 {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.4px;
+    margin-bottom: 12px;
+    color: #fafafa;
+}
+
+.welcome p {
+    color: #d4d4d8;
+    font-size: 14px;
 }
 
 .session-info p {
     margin: 10px 0;
+    color: #d4d4d8;
+    font-size: 14px;
 }
 
+.session-info strong {
+    color: #ffffff;
+}
+
+/* Enlaces y botones */
 .session-info a {
     display: inline-block;
     margin-top: 15px;
-    padding: 10px 15px;
-    color: white;
-    background-color: #263b50;
+    padding: 9px 16px;
+    color: #18181b;
+    background-color: #fafafa;
     text-decoration: none;
-    border-radius: 5px;
+    border: 1px solid #fafafa;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s;
 }
 
+.session-info a:hover {
+    background-color: #d4d4d8;
+}
+
+/* Botón de reinicio */
+.btn-reiniciar {
+    display: inline-block;
+    padding: 9px 16px;
+    background-color: #27272a;
+    color: #fca5a5;
+    text-decoration: none;
+    border: 1px solid #52525b;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.btn-reiniciar:hover {
+    background-color: #3f3f46;
+    border-color: #f87171;
+}
+
+/* Pie de página */
 .site-footer {
     text-align: center;
-    padding: 20px;
-    background-color: #263b50;
-    color: white;
+    padding: 24px 20px;
+    background-color: #202023;
+    color: #d4d4d8;
+    border-top: 1px solid #3f3f46;
+    font-size: 13px;
+}
+
+/* Adaptación para móviles */
+@media (max-width: 600px) {
+    .site-header {
+        padding: 28px 16px;
+    }
+
+    .site-header h1 {
+        font-size: 23px;
+    }
+
+    .container {
+        width: 92%;
+        margin: 25px auto;
+    }
+
+    .welcome,
+    .session-info {
+        padding: 20px;
+    }
+
+    .main-menu {
+        gap: 4px;
+    }
+
+    .main-menu a {
+        padding: 8px 10px;
+    }
 }
