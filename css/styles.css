@@ -273,15 +273,25 @@ body {
 }
 
 /* Pie de página */
-.site-footer {
-    text-align: center;
-    padding: 24px 20px;
-    background-color: #202023;
-    color: #d4d4d8;
-    border-top: 1px solid #3f3f46;
-    font-size: 13px;
+.site-footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
 }
 
+.site-footer ul li {
+    font-size: 0.9rem;
+    color: #d5dce3;
+    transition: color 0.2s ease;
+}
+
+.site-footer ul li:hover {
+    color: #ffffff;
+}
 /* ===== Bucles y Arreglos (bucles.php / arreglos.php) ===== */
 
 /* Listas */
