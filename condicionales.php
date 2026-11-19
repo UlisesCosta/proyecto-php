@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <section class="welcome">
             <h2>Estructuras condicionales</h2>
-            <div class="data-types-grid">
+            <div class="data-types-grid conditional-grid">
                 <article class="data-type">
                     <h3>if</h3>
                     <p>Ejecuta un bloque únicamente cuando la condición se cumple.</p>

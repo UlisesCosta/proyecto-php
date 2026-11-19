@@ -126,6 +126,10 @@ body {
     gap: 14px;
 }
 
+.conditional-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .data-type {
     padding: 18px;
     background-color: #202023;
@@ -297,6 +301,10 @@ body {
     .welcome,
     .session-info {
         padding: 20px;
+    }
+
+    .conditional-grid {
+        grid-template-columns: 1fr;
     }
 
     .main-menu {
