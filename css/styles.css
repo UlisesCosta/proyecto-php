@@ -1,4 +1,3 @@
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -283,6 +282,158 @@ body {
     font-size: 13px;
 }
 
+/* ===== Bucles y Arreglos (bucles.php / arreglos.php) ===== */
+
+/* Listas */
+.session-info ul,
+.session-info ol {
+    list-style: none;
+    padding: 0;
+    margin: 14px 0 0;
+    counter-reset: item;
+}
+
+.session-info li {
+    background-color: #18181b;
+    border: 1px solid #3f3f46;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #e4e4e7;
+}
+
+.session-info ol > li::before {
+    counter-increment: item;
+    content: counter(item);
+    display: inline-block;
+    min-width: 24px;
+    height: 24px;
+    line-height: 24px;
+    margin-right: 10px;
+    text-align: center;
+    border-radius: 6px;
+    background-color: #3f3f46;
+    color: #fafafa;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.session-info ul > li::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 12px;
+    border-radius: 50%;
+    background-color: #a1a1aa;
+}
+
+.session-info li li {
+    background-color: transparent;
+    border: 0;
+    padding: 4px 0;
+    margin: 0;
+}
+
+.session-info small {
+    color: #a1a1aa;
+    margin-left: 6px;
+}
+
+.session-info h3 {
+    font-size: 16px;
+    margin: 20px 0 6px;
+    color: #fafafa;
+}
+
+.session-info code {
+    background-color: #18181b;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 13px;
+    color: #e4e4e7;
+}
+
+/* Bloques de código */
+pre.codigo {
+    background-color: #18181b;
+    border: 1px solid #3f3f46;
+    border-radius: 8px;
+    padding: 14px;
+    overflow-x: auto;
+    color: #d4d4d8;
+    font-size: 13px;
+    margin: 12px 0;
+}
+
+/* Tablas generadas dinámicamente */
+.tabla {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 14px;
+    font-size: 14px;
+    border: 1px solid #3f3f46;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tabla th,
+.tabla td {
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid #3f3f46;
+    color: #e4e4e7;
+}
+
+.tabla th {
+    background-color: #202023;
+    color: #a1a1aa;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tabla tbody tr:nth-child(even) td {
+    background-color: #2d2d31;
+}
+
+.tabla tbody tr:hover td {
+    background-color: #34343a;
+}
+
+.tabla tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+/* Etiquetas de estado */
+.ok,
+.aviso,
+.alerta {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.ok {
+    color: #86efac;
+    background-color: rgba(34, 197, 94, 0.15);
+}
+
+.aviso {
+    color: #fcd34d;
+    background-color: rgba(245, 158, 11, 0.15);
+}
+
+.alerta {
+    color: #fca5a5;
+    background-color: rgba(239, 68, 68, 0.15);
+}
+
 /* Adaptación para móviles */
 @media (max-width: 600px) {
     .site-header {
@@ -313,5 +464,10 @@ body {
 
     .main-menu a {
         padding: 8px 10px;
+    }
+
+    .tabla {
+        display: block;
+        overflow-x: auto;
     }
 }
