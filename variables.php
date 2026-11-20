@@ -69,14 +69,16 @@ $esMayor = false;</code></pre>
                 <article class="data-type">
                     <h3>Arreglo (array)</h3>
                     <p>Agrupa varios valores en una sola variable, con índices o claves.</p>
-                    <pre><code>$colores = ["rojo", "verde"];
-$persona = ["nombre" =&gt; "Ana", "edad" =&gt; 20];</code></pre>
+                    <pre>
+                        <code>$colores = ["rojo", "verde"];
+                        $persona = ["nombre" => "Ana", "edad" => 20];</code></pre>
                 </article>
 
                 <article class="data-type">
                     <h3>Objeto (object)</h3>
                     <p>Es una instancia de una clase que puede reunir propiedades y métodos.</p>
                     <pre><code>class Persona {}
+
 $persona = new Persona();</code></pre>
                 </article>
 
@@ -117,8 +119,12 @@ $persona = new Persona();</code></pre>
                         <?php foreach ($ejemplosTipos as $nombre => $valor): ?>
                             <tr>
                                 <td><?= htmlspecialchars($nombre, ENT_QUOTES, 'UTF-8') ?></td>
-                                <td><code><?= htmlspecialchars(var_export($valor, true), ENT_QUOTES, 'UTF-8') ?></code></td>
-                                <td><code><?= htmlspecialchars(gettype($valor), ENT_QUOTES, 'UTF-8') ?></code></td>
+                                <td>
+                                    <code><?= htmlspecialchars(var_export($valor, true), ENT_QUOTES, 'UTF-8') ?></code>
+                                </td>
+                                <td>
+                                    <code><?= htmlspecialchars(gettype($valor), ENT_QUOTES, 'UTF-8') ?></code>
+                                </td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
@@ -131,21 +137,87 @@ $persona = new Persona();</code></pre>
             <ul class="type-functions">
                 <li><code>gettype($valor)</code> obtiene el nombre general del tipo.</li>
                 <li><code>var_dump($valor)</code> muestra el tipo y el valor; es útil para depurar.</li>
-                <li><code>is_int()</code>, <code>is_float()</code>, <code>is_string()</code>, <code>is_bool()</code>, <code>is_array()</code>, <code>is_object()</code> e <code>is_null()</code> comprueban tipos concretos y devuelven un booleano.</li>
+
+                <li>
+                    <code>is_int()</code>, <code>is_float()</code>, <code>is_string()</code>,
+                    <code>is_bool()</code>, <code>is_array()</code>, <code>is_object()</code>
+                    e <code>is_null()</code> comprueban tipos concretos y devuelven un booleano.
+                </li>
+
                 <li><code>settype($variable, "integer")</code> cambia el tipo de la variable original.</li>
-                <li><code>(int)</code>, <code>(float)</code>, <code>(string)</code> y <code>(bool)</code> convierten un valor mediante casting, sin cambiar la variable original.</li>
-                <li><code>intval()</code>, <code>floatval()</code>, <code>strval()</code> y <code>boolval()</code> también devuelven valores convertidos.</li>
+
+                <li>
+                    <code>(int)</code>, <code>(float)</code>, <code>(string)</code> y
+                    <code>(bool)</code> convierten un valor mediante casting, sin cambiar
+                    la variable original.
+                </li>
+
+                <li>
+                    <code>intval()</code>, <code>floatval()</code>, <code>strval()</code>
+                    y <code>boolval()</code> también devuelven valores convertidos.
+                </li>
             </ul>
             <pre><code>$cantidad = "12";
-$numero = (int) $cantidad; // 12
-$esNumero = is_int($numero); // true</code></pre>
+                $numero = (int) $cantidad; // 12
+                $esNumero = is_int($numero); // true</code></pre>
+
             <p>
                 PHP también permite declarar tipos para parámetros y valores de retorno,
                 por ejemplo: <code>function duplicar(int $numero): int</code>.
             </p>
         </section>
-    </main>
+        <section class="welcome">
+            <h2>Uso de funciones básicas en PHP</h2>
+            <?php
+                $nombre = "Ulises";
+                $colores = ["rojo", "verde", "azul"];
+                $cantidadColores = count($colores);
+                $fechaActual = date("d/m/Y");
+            ?>
 
+            <p>
+                La función <code>echo</code> permite mostrar información
+                directamente en la página.
+            </p>
+
+            <pre><code>$nombre = "Ulises";
+echo $nombre;</code></pre>
+
+            <p>
+                Resultado:
+                <strong><?php echo $nombre; ?></strong>
+            </p>
+
+            <p>
+                La función <code>count()</code> permite conocer la cantidad
+                de elementos que contiene un arreglo.
+            </p>
+
+            <pre><code>$colores = ["rojo", "verde", "azul"];
+$cantidadColores = count($colores);
+echo $cantidadColores;</code></pre>
+
+            <p>
+                Cantidad de colores:
+                <strong><?php echo $cantidadColores; ?></strong>
+            </p>
+
+            <p>
+                La función <code>date()</code> permite obtener y dar formato
+                a la fecha actual del servidor.
+            </p>
+
+            <pre><code>$fechaActual = date("d/m/Y");
+echo $fechaActual;</code></pre>
+
+            <p>
+                Fecha actual:
+                <strong><?php echo $fechaActual; ?></strong>
+            </p>
+        </section>
+
+
+    </main>
     <?php require_once __DIR__ . '/includes/footer.php'; ?>
 
 </body>
